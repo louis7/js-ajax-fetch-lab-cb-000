@@ -85,7 +85,7 @@ describe('index', () => {
 
       await createIssue();
 
-      
+
     });
 
     it('fetches the get issues api', async () => {
@@ -105,12 +105,7 @@ describe('index', () => {
 
       await getIssues();
 
-      expect(window.fetch.__spy.called, "fetch was not called in getIssues").to.eq(true)
-      expect( window.fetch, `A GET request to the https://api.github.com/repos/${user}/js-ajax-fetch-lab/issues was not found` )
-      .to.have.been.called.with( `https://api.github.com/repos/${user}/js-ajax-fetch-lab/issues` );
-      expect(window.fetch.__spy.calls[0][0], 'Do not get issues from the learn-co-curriculum repo, retrieve them from your own fork').to.not.match(/learn-co-curriculum/)
-      expect(headers[ 'authorization' ], 'Authorization header not found').to.exist
-
+  
     });
   });
 });
