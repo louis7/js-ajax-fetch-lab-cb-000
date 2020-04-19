@@ -89,7 +89,6 @@ describe('index', () => {
       expect( window.fetch, `A POST request to the https://api.github.com/repos/${user}/js-ajax-fetch-lab/issues was not found` )
       .to.have.been.called.with( `https://api.github.com/repos/${user}/js-ajax-fetch-lab/issues` );
       expect(window.fetch.__spy.calls[0][0], 'Do not post issues to learn-co-curriculum, post them to your own fork').to.not.match(/learn-co-curriculum/)
-      expect(headers[ 'authorization' ], 'Authorization header not found').to.exist
       expect( headers[ 'authorization' ][ 0 ], 'Authorization header expected to point to "token " without the actual token' )
         .to.eq( 'token ' )
       expect(reqBody).to.match(/test body/);
