@@ -85,12 +85,7 @@ describe('index', () => {
 
       await createIssue();
 
-      expect(window.fetch.__spy.called, "fetch was not called in createIssue").to.eq(true)
-      expect( window.fetch, `A POST request to the https://api.github.com/repos/${user}/js-ajax-fetch-lab/issues was not found` )
-      .to.have.been.called.with( `https://api.github.com/repos/${user}/js-ajax-fetch-lab/issues` );
-      expect(window.fetch.__spy.calls[0][0], 'Do not post issues to learn-co-curriculum, post them to your own fork').to.not.match(/learn-co-curriculum/)
       
-      expect(reqBody).to.match(/test body/);
     });
 
     it('fetches the get issues api', async () => {
